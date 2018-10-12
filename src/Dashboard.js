@@ -1,76 +1,92 @@
 import React from 'react';
 //import {connect} from react-redux;
-export default function Dashboard(props) {
-  console.log('props.catToAdopt[0]: ', props.catToAdopt[0]);
-
-  function getCat() {
-    return props.catToAdopt[0];
-  }  
-
-  function getDog() {
-    return props.dogToAdopt;
+import Pet from './components/Pet';
+export default class Dashboard extends React.Component {
+  componentDidMount(){
+    // this.props.dispatch(fetchCat())
+    // this.props.dispatch(fetchDog())
   }
-  getCat();
- 
-  getDog();
-function adoptIt () {
-  console.log(true);
-}
 
-    const catAnimalName = props.catToAdopt[0].name;
-    const catImageDescription = props.catToAdopt[0].imageDescription;     
-    const catSex = props.catToAdopt[0].sex;    
-    const catAge = props.catToAdopt[0].age;    
-    const catBreed = props.catToAdopt[0].breed;    
-    const catStory = props.catToAdopt[0].story;    
-    const catImageURL = props.catToAdopt[0].imageURL; 
+
+
+  render() {
     
+    function onAdoptPet() {
+      console.log(true);
+    }
 
-    const dogAnimalName = props.dogToAdopt[0].name;    
-    const dogImageDescription = props.dogToAdopt[0].imageDescription; 
-    const dogSex = props.dogToAdopt[0].sex;    
-    const dogAge = props.dogToAdopt[0].age;    
-    const dogBreed = props.dogToAdopt[0].breed;    
-    const dogStory = props.dogToAdopt[0].story;    
-    const dogImageURL = props.dogToAdopt[0].imageURL; 
+  const catToAdopt = [
+    {
+      imageURL: 'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
+      imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
+      name: 'Fluffy',
+      sex: 'Female',
+      age: 2,
+      breed: 'Bengal',
+      story: 'Thrown on the street',
+      chosen: false
+    },
+    {
+      imageURL: 'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
+      imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
+      name: 'Fluffy',
+      sex: 'Female',
+      age: 3,
+      breed: 'Bengal',
+      story: 'Thrown on the street',
+      chosen: false
+    },
+    {
+      imageURL: 'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
+      imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
+      name: 'Fluffy',
+      sex: 'Female',
+      age: 4,
+      breed: 'Bengal',
+      story: 'Thrown on the street',
+      chosen: false
+    }
+  ]; 
+  
+  const dogToAdopt = [
+    {
+      imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+      imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
+      name: 'Zeus',
+      sex: 'Male',
+      age: 3,
+      breed: 'Golden Retriever',
+      story: 'Owner Passed away',
+      chosen: false
+    },
+    {
+      imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+      imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
+      name: 'Zeus',
+      sex: 'Male',
+      age: 3,
+      breed: 'Golden Retriever',
+      story: 'Owner Passed away',
+      chosen: false
+    },
+    {
+      imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+      imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
+      name: 'Zeus',
+      sex: 'Male',
+      age: 3,
+      breed: 'Golden Retriever',
+      story: 'Owner Passed away',
+      chosen: false
+    }
+  ];
+
     return (
       <React.Fragment>
-        <section className="catToAdopt">
-          <header className="profile">
-            <h2 className="animalName">{catAnimalName}</h2>
-            <img className="animalimageURL" src={catImageURL} alt={catImageDescription} />
-          </header>
-          <main>
-          <dl className="details">
-            <dt>{catAnimalName}</dt>
-            <dd>{catSex}</dd>
-            <dd>{catAge}</dd>
-            <dd>{catBreed}</dd>
-            <dd>{catStory}</dd>
-          </dl>
-          <button onClick={adoptIt} type="button">Adopt></button>
-        </main>           
-        </section>
-
-        <section className="dogToAdopt">
-          <header className="profile">
-            <h2 className="animalName">{dogAnimalName}</h2>
-            <img className="animalimageURL" src={dogImageURL} alt={dogImageDescription} />
-          </header>
-          <main>
-          <dl className="details">
-            <dt>{dogAnimalName}</dt>
-            <dd>{dogSex}</dd>
-            <dd>{dogAge}</dd>
-            <dd>{dogBreed}</dd>
-            <dd>{dogStory}</dd>
-          </dl>
-          <button onClick={adoptIt} type="button">Adopt></button>
-        </main> 
-        </section>
-
+        <Pet catToAdopt={catToAdopt} onAdoptPet={onAdoptPet}/>
+        <Pet dogToAdopt={dogToAdopt} onAdoptPet={onAdoptPet}/>
       </React.Fragment>
-
     );
   }
+}
 
