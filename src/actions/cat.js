@@ -1,4 +1,3 @@
-
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
 export const fetchCatSuccess = catList => ({
   type: FETCH_CAT_SUCCESS,
@@ -26,3 +25,19 @@ export const fetchCat = () => dispatch => {
   });
 };
 
+export const adoptCat = () => dispatch => {
+  fetch('localhost:8080/api/cat', {
+    method: 'DELETE'
+  })
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json();
+  }).then(catList=> {
+    dispatch(fetchCatSuccess(catList));
+  })
+  .catch(err => {
+    dispatch(fetchCatFailure(err));
+  });
+};

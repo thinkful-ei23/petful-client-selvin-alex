@@ -21,8 +21,24 @@ export const fetchDog = () => dispatch => {
   }).then(dogList=> {
     dispatch(fetchDogSuccess(dogList));
   })
-  .dogch(err => {
+  .catch(err => {
     dispatch(fetchDogFailure(err));
   });
 };
 
+export const adoptDog = () => dispatch => {
+  fetch('localhost:8080/api/dog', {
+    method: 'DELETE'
+  })
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json();
+  }).then(dogList=> {
+    dispatch(fetchDogSuccess(dogList));
+  })
+  .catch(err => {
+    dispatch(fetchDogFailure(err));
+  });
+};
