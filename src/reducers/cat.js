@@ -13,7 +13,7 @@ export const catReducer = (state = initialState, action) => {
       });
     case 'FETCH_CAT_SUCCESS':
       return Object.assign({}, state, {
-        data: action.catList,
+        data: action.data,
         loading: false
       });
     case 'FETCH_CAT_FAILURE':

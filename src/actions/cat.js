@@ -4,16 +4,16 @@ export const fetchCatRequest = () => ({
 });
 
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
-export const fetchCatSuccess = catList => ({
+export const fetchCatSuccess = data => ({
   type: FETCH_CAT_SUCCESS,
-  catList
-})
+  data
+});
 
 export const FETCH_CAT_FAILURE = 'FETCH_CAT_FAILURE';
 export const fetchCatFailure = err => ({
   type: FETCH_CAT_FAILURE,
   err
-})
+});
 
 export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
 export const adoptCatRequest = () => ({
@@ -24,18 +24,18 @@ export const ADOPT_CAT_FAILURE = 'ADOPT_CAT_FAILURE';
 export const adoptCatFailure = err => ({
   type: ADOPT_CAT_FAILURE,
   err
-})
+});
 
 export const fetchCat = () => dispatch => {
   dispatch(fetchCatRequest())
-  fetch('localhost:8080/api/cat')
+  fetch('http://localhost:8080/api/cat')
   .then(res => {
     if (!res.ok) {
       return Promise.reject(res.statusText);
     }
     return res.json();
-  }).then(catList=> {
-    dispatch(fetchCatSuccess(catList));
+  }).then(data=> {
+    dispatch(fetchCatSuccess(data));
   })
   .catch(err => {
     dispatch(fetchCatFailure(err));
@@ -44,7 +44,7 @@ export const fetchCat = () => dispatch => {
 
 export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
-  fetch('localhost:8080/api/cat', {
+  fetch('http://localhost:8080/api/cat', {
     method: 'DELETE'
   })
   .then(dispatch(fetchCat()))

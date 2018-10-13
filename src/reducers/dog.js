@@ -12,8 +12,9 @@ export const dogReducer = (state = initialState, action) => {
         loading: true
       });
     case 'FETCH_DOG_SUCCESS':
+    console.log('fetchDogSuccess');
       return Object.assign({}, state, {
-        data: action.dogList,
+        data: action.data,
         loading: false
       });
     case 'FETCH_DOG_FAILURE':
