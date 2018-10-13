@@ -47,7 +47,12 @@ export const adoptDog = () => dispatch => {
   fetch('http://localhost:8080/api/dog', {
     method: 'DELETE'
   })
-  .then(dispatch(fetchDog()))
+  .then(res => {
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    dispatch(fetchDog());
+  })
   .catch(err => {
     dispatch(adoptDogFailure(err));
   });
