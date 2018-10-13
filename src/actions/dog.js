@@ -1,4 +1,3 @@
-
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
 export const fetchDogSuccess = dogList => ({
   type: FETCH_DOG_SUCCESS,
@@ -8,6 +7,12 @@ export const fetchDogSuccess = dogList => ({
 export const FETCH_DOG_FAILURE = 'FETCH_DOG_FAILURE';
 export const fetchDogFailure = err => ({
   type: FETCH_DOG_FAILURE,
+  err
+})
+
+export const ADOPT_DOG_FAILURE = 'ADOPT_DOG_FAILURE';
+export const adoptDogFailure = err => ({
+  type: ADOPT_DOG_FAILURE,
   err
 })
 
@@ -30,15 +35,8 @@ export const adoptDog = () => dispatch => {
   fetch('localhost:8080/api/dog', {
     method: 'DELETE'
   })
-  .then(res => {
-    if (!res.ok) {
-      return Promise.reject(res.statusText);
-    }
-    return res.json();
-  }).then(dogList=> {
-    dispatch(fetchDogSuccess(dogList));
-  })
+  .then(dispatch(fetchDog()))
   .catch(err => {
-    dispatch(fetchDogFailure(err));
+    dispatch(adoptDogFailure(err));
   });
 };

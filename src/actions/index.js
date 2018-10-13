@@ -1,0 +1,21 @@
+import {
+  FETCH_CAT_SUCCESS,
+  FETCH_CAT_FAILURE,  
+  ADOPT_CAT_FAILURE
+} from './cat';
+
+import {
+  FETCH_DOG_SUCCESS,
+  FETCH_DOG_FAILURE,  
+  ADOPT_DOG_FAILURE
+} from './dog';
+
+const actions = {    
+  FETCH_CAT_SUCCESS,
+  FETCH_CAT_FAILURE,  
+  ADOPT_CAT_FAILURE,
+  FETCH_DOG_SUCCESS,
+  FETCH_DOG_FAILURE,  
+  ADOPT_DOG_FAILURE
+}
+export default actions;
