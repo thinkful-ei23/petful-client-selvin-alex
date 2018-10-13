@@ -35,6 +35,7 @@ export const fetchCat = () => dispatch => {
     }
     return res.json();
   }).then(data=> {
+    console.log('cat data: ', data);
     dispatch(fetchCatSuccess(data));
   })
   .catch(err => {

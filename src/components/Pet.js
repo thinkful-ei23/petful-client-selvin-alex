@@ -2,21 +2,21 @@ import React from 'react';
 
 export default function Pet(props) {
 
-  // console.log('props: ', props);
+   console.log('props: ', props);
   if (props.catToAdopt) {
-    const catAnimalName = props.catToAdopt[0].name;
-    const catImageDescription = props.catToAdopt[0].imageDescription;
-    const catSex = props.catToAdopt[0].sex;
-    const catAge = props.catToAdopt[0].age;
-    const catBreed = props.catToAdopt[0].breed;
-    const catStory = props.catToAdopt[0].story;
-    const catImageURL = props.catToAdopt[0].imageURL;
+    const catAnimalName = props.catToAdopt.name;
+    const catImageDescription = props.catToAdopt.imageDescription;
+    const catSex = props.catToAdopt.sex;
+    const catAge = props.catToAdopt.age;
+    const catBreed = props.catToAdopt.breed;
+    const catStory = props.catToAdopt.story;
+    const catImageURL = props.catToAdopt.imageURL;
     return (
       <section className="catToAdopt">
         <header className="profile">
           <h2 className="animalName">{catAnimalName}</h2>
-          <img
-            className="animalimageURL"
+          <img 
+            className={catImageURL}
             src={catImageURL}
             alt={catImageDescription}
           />
@@ -36,19 +36,19 @@ export default function Pet(props) {
       </section>
     );
   } else if (props.dogToAdopt) {
-    const dogAnimalName = props.dogToAdopt[0].name;
-    const dogImageDescription = props.dogToAdopt[0].imageDescription;
-    const dogSex = props.dogToAdopt[0].sex;
-    const dogAge = props.dogToAdopt[0].age;
-    const dogBreed = props.dogToAdopt[0].breed;
-    const dogStory = props.dogToAdopt[0].story;
-    const dogImageURL = props.dogToAdopt[0].imageURL;
+    const dogAnimalName = props.dogToAdopt.name;
+    const dogImageDescription = props.dogToAdopt.imageDescription;
+    const dogSex = props.dogToAdopt.sex;
+    const dogAge = props.dogToAdopt.age;
+    const dogBreed = props.dogToAdopt.breed;
+    const dogStory = props.dogToAdopt.story;
+    const dogImageURL = props.dogToAdopt.imageURL;
     return (
       <section className="dogToAdopt">
         <header className="profile">
           <h2 className="animalName">{dogAnimalName}</h2>
           <img
-            className="animalimageURL"
+            className={dogImageURL}
             src={dogImageURL}
             alt={dogImageDescription}
           />

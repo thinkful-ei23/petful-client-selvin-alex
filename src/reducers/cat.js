@@ -1,4 +1,4 @@
-import actions from '../actions';
+//import * as actions from '../actions';
 
 const initialState = {
   data: null,
@@ -6,12 +6,14 @@ const initialState = {
   loading: false
 };
 export const catReducer = (state = initialState, action) => {
-  switch (actions.type) {
+  console.log('cat reducer actions.type: ', action.type);
+  switch (action.type) {
     case 'FETCH_CAT_REQUEST':
       return Object.assign({}, state, {
         loading: true
       });
     case 'FETCH_CAT_SUCCESS':
+    console.log('fetch cat success:', action.data);
       return Object.assign({}, state, {
         data: action.data,
         loading: false

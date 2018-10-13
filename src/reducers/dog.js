@@ -1,4 +1,4 @@
-import actions from '../actions';
+//import * as actions from '../actions';
 
 const initialState = {
   data: null,
@@ -6,13 +6,13 @@ const initialState = {
   loading: false
 };
 export const dogReducer = (state = initialState, action) => {
-  switch (actions.type) {
+  switch (action.type) {
     case 'FETCH_DOG_REQUEST':
       return Object.assign({}, state, {
         loading: true
       });
     case 'FETCH_DOG_SUCCESS':
-    console.log('fetchDogSuccess');
+    console.log('fetchDogSuccess: ', action.data);
       return Object.assign({}, state, {
         data: action.data,
         loading: false
