@@ -3,6 +3,6 @@ import {catReducer} from './cat';
 import {dogReducer} from './dog';
 
 export const reducer = combineReducers({
-  cat: catReducer,
-  dog: dogReducer
+  catReducer: catReducer,
+  dogReducer: dogReducer
 });

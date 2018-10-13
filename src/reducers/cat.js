@@ -1,24 +1,36 @@
 import actions from '../actions';
 
-const initialState = {  
-    data: null,
-    error: null,
-    loading: false 
-}
-export default const catReducer = (state=initialState, action) => {
-  switch (action.type) {
+const initialState = {
+  data: null,
+  error: null,
+  loading: false
+};
+export const catReducer = (state = initialState, action) => {
+  switch (actions.type) {
+    case 'FETCH_CAT_REQUEST':
+      return Object.assign({}, state, {
+        loading: true
+      });
     case 'FETCH_CAT_SUCCESS':
-    return Object.assign({}, state, {
-      data: action.catList
-    });
+      return Object.assign({}, state, {
+        data: action.catList,
+        loading: false
+      });
     case 'FETCH_CAT_FAILURE':
-    return Object.assign({}, state, {
-      error: action.err
-    });
+      return Object.assign({}, state, {
+        error: action.err,
+        loading: false
+      });
+    case 'ADOPT_CAT_REQUEST':
+      return Object.assign({}, state, {
+        loading: true
+      });
     case 'ADOPT_CAT_FAILURE':
-    return Object.assign({}, state, {
-      error: action.err
-    });
-   
+      return Object.assign({}, state, {
+        error: action.err,
+        loading: false
+      });
+    default:
+      return state;
   }
 }

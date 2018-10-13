@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Pet(props) {
 
-  console.log('props: ', props);
+  // console.log('props: ', props);
   if (props.catToAdopt) {
     const catAnimalName = props.catToAdopt[0].name;
     const catImageDescription = props.catToAdopt[0].imageDescription;
