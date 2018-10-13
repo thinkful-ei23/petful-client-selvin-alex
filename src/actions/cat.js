@@ -48,7 +48,12 @@ export const adoptCat = () => dispatch => {
   fetch('http://localhost:8080/api/cat', {
     method: 'DELETE'
   })
-  .then(dispatch(fetchCat()))
+  .then(res => {
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    dispatch(fetchCat());
+  })
   .catch(err => {
     dispatch(adoptCatFailure(err));
   });
