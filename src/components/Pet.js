@@ -47,7 +47,7 @@ export default function Pet(props) {
       <section className="dogToAdopt">
         <header className="profile">
           <h2 className="animalName">{dogAnimalName}</h2>
-          <img
+          <img 
             className={dogImageURL}
             src={dogImageURL}
             alt={dogImageDescription}
@@ -55,7 +55,7 @@ export default function Pet(props) {
         </header>
         <main>
           <dl className="details">
-            <dt>{dogAnimalName}</dt>
+            <dt>{dogAnimalName}</dt> 
             <dd>{dogSex}</dd>
             <dd>{dogAge}</dd>
             <dd>{dogBreed}</dd>

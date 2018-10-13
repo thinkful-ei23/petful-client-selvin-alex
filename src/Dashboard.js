@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
           onAdoptPet={animalType => this.onAdoptPet(animalType)}
         />
         <Pet
-          dogToAdopt={this.props.dogToAdopt}
+          dogToAdopt={this.props.dogData}
           onAdoptPet={animalType => this.onAdoptPet(animalType)}
         />
       </React.Fragment>
