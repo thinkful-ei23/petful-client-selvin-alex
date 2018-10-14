@@ -25,6 +25,8 @@ The dashboard will display a cat and a dog which you can then decide to adopt if
 * HTML5
 * CSS3
 * Vanilla JavaScript
+* React
+* Redux
 
 ### Back-End
 * Node.js

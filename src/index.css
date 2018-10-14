@@ -14,6 +14,25 @@ code {
 }
 
 #root {
-  width: 800px;
   margin: 0 auto;
+}
+
+img {
+  width: 250px;
+}
+
+@media screen and (min-width: 825px) {
+  #root {
+    display: flex;
+    width: 800px;
+  }
+
+  section {
+    display: inline-block;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+ 
+
 }
