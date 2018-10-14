@@ -24,10 +24,10 @@ export default function Pet(props) {
         <main>
           <dl className="details">
             <dt>{catAnimalName}</dt>
-            <dd>{catSex}</dd>
-            <dd>{catAge}</dd>
-            <dd>{catBreed}</dd>
-            <dd>{catStory}</dd>
+            <dd><span className="title">sex: </span>{catSex}</dd>
+            <dd><span className="title">age: </span>{catAge}</dd>
+            <dd><span className="title">breed: </span>{catBreed}</dd>
+            <dd><span className="title">bio: </span>{catStory}</dd>
           </dl>
           <button onClick={props.onAdoptPet} type="button">
             Adopt
@@ -56,10 +56,10 @@ export default function Pet(props) {
         <main>
           <dl className="details">
             <dt>{dogAnimalName}</dt> 
-            <dd>{dogSex}</dd>
-            <dd>{dogAge}</dd>
-            <dd>{dogBreed}</dd>
-            <dd>{dogStory}</dd>
+            <dd><span className="title">sex: </span>{dogSex}</dd>
+            <dd><span className="title">age: </span>{dogAge}</dd>
+            <dd><span className="title">breed: </span>{dogBreed}</dd>
+            <dd><span className="title">bio: </span>{dogStory}</dd>
           </dl>
           <button onClick={props.onAdoptPet} type="button">
             Adopt

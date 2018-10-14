@@ -21,6 +21,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <p>The Petful project demonstrates the use of a First-In-First-Out (FIFO) queue via a virtual animal shelter that allows adoption of cats and dogs. Users are presented with a choice of selecting either a dog, or a cat.  This dog or cat is the animal that has been in its respective queue the longest.</p>
         <Pet
           catToAdopt={this.props.catData}
           onAdoptPet={() => this.onAdoptCat()}
